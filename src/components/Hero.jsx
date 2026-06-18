@@ -12,11 +12,11 @@ export default function Hero() {
           <img src={DouglasImg} alt="Douglas" className="profile-img" />
         </div>
         <div className="hero-content">
-          <h1>Criando o futuro através do <span className="text-gradient">código.</span></h1>
+          <h1>Desenvolvedor Frontend especializado em React, focado em criar interfaces modernas,rápidas e responsivas. <span className="text-gradient"></span></h1>
           <p>Desenvolvedor Frontend especializado em interfaces modernas.</p>
           <div className="hero-btns">
             <a href="#projects" className="btn-primary">Ver Trabalho</a>
-            <a href="https://wa.me/351912345678" className="btn-secondary" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/351935063009" className="btn-secondary" target="_blank" rel="noreferrer">
               WhatsApp
             </a>
           </div>

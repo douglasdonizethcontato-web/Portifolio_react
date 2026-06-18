@@ -9,7 +9,7 @@ export default function Contact() {
           Email
         </a>
         {/* Substitui pelo teu número real do WhatsApp no link abaixo */}
-        <a href="https://wa.me/351912345678" className="contact-card" target="_blank" rel="noreferrer">
+        <a href="https://wa.me/351935063009" className="contact-card" target="_blank" rel="noreferrer">
           WhatsApp
         </a>
       </div>
