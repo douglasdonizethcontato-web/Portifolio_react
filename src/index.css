@@ -1,8 +1,8 @@
 /* 1. VARIÁVEIS E DEFINIÇÕES GERAIS */
 :root {
-    --primary: #6366f1;          
+    --primary: #6366f1;
     --primary-hover: #4f46e5;
-    --bg-dark: #0f172a;         
+    --bg-dark: #0f172a;
     --card-bg: rgba(255, 255, 255, 0.05);
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
@@ -10,262 +10,19 @@
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', system-ui, sans-serif;
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; scroll-behavior: smooth; }
 
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
-    min-height: 100vh;
-    
-    body {
-    font-family: 'Inter', sans-serif;
-    /* o resto do teu estilo do body continua aqui... */
-}
-}
+body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; min-height: 100vh; }
 
-/* 2. FUNDO FUTURISTA (SOL E ESTRELAS) */
-.futuristic-bg {
-    position: fixed; /* ou absolute */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #0a0a23; /* ou a tua cor azul/roxa */
-    
-    /* ADICIONA ESTA LINHA ABAIXO: */
-    z-index: -1; 
-}
-.sun {
-    position: absolute;
-    top: 20%; left: 50%;
-    transform: translateX(-50%);
-    width: 300px; height: 300px;
-    background: linear-gradient(to bottom, #ff0080, #ff8c00);
-    border-radius: 50%;
-    box-shadow: 0 0 60px rgba(255, 0, 128, 0.5);
-    animation: sunMove 8s ease-in-out infinite alternate;
-}
+/* 2. FUNDO FUTURISTA */
+.futuristic-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0a0a23; z-index: -1; }
 
-.sun::after {
-    content: "";
-    position: absolute;
-    width: 100%; height: 0%;
-    background: repeating-linear-gradient(transparent 0px, transparent 20px, rgba(15, 23, 42, 1) 22px, rgba(15, 23, 42, 1) 24px);
-    border-radius: 50%;
-}
-
-@keyframes sunMove {
-    from { transform: translate(-50%, 0px); filter: hue-rotate(0deg); }
-    to { transform: translate(-50%, -30px); filter: hue-rotate(20deg); }
-}
-
-.stars {
-    position: absolute;
-    width: 100%; height: 100%;
-    background: transparent;
-    box-shadow: 10vw 20vh #fff, 25vw 45vh #fff, 40vw 10vh #fff, 55vw 60vh #fff, 70vw 30vh #fff, 85vw 80vh #fff;
-    opacity: 0.3;
-}
-
-.grid-floor {
-    position: absolute;
-    bottom: 0;
-    width: 100%; height: 40%;
-    background-image: linear-gradient(rgba(99, 102, 241, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.2) 1px, transparent 1px);
-    background-size: 50px 50px;
-    transform: perspective(500px) rotateX(60deg);
-    transform-origin: top;
-}
-
-/* 3. NAVEGAÇÃO GLASS */
-.glass-nav {
-    position: fixed;
-    top: 20px; left: 50%; transform: translateX(-50%);
-    width: 90%; max-width: 1100px;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 30px;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 100px;
-    z-index: 1000;
-}
-
-.logo { font-weight: 800; font-size: 1.2rem; }
-.logo span { color: var(--primary); }
-
-.nav-links { display: flex; list-style: none; gap: 25px; }
-.nav-links a { text-decoration: none; color: var(--text-dim); transition: 0.3s; font-size: 0.9rem; }
-.nav-links a:hover { color: white; }
-
-/* 4. HERO SECTION */
-.hero {
-    height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-    padding: 0 5%;
-}
-
-.hero-container {
-    display: flex; flex-direction: column;
-    align-items: center; text-align: center;
-    gap: 40px; max-width: 1000px;
-}
-
-.profile-box {
-    position: relative; /* Necessário para ancorar a badge */
-    width: 220px;
-    height: 220px;
-    margin-bottom: 20px; /* Espaço para o texto não colar */
-}
-
-.profile-box .badge {
-    position: absolute;
-    top: -15px;      /* Move para cima da borda da foto */
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza perfeitamente */
-    z-index: 10;     /* Garante que fica à frente da imagem */
-    white-space: nowrap; /* Impede que o texto quebre em duas linhas */
-    background: var(--primary); /* Cor sólida para destacar sobre o sol */
-    color: white;
-    padding: 6px 15px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.5);
-}
-
-
-.profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 40px;
-    border: 3px solid var(--primary);
-}
-
-.profile-box { width: 220px; height: 220px; position: relative; }
-
-.profile-img {
-    width: 100%; height: 100%;
-    object-fit: cover; border-radius: 40px;
-    border: 2px solid var(--primary);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-.badge {
-    background: rgba(99, 102, 241, 0.1);
-    color: var(--primary);
-    padding: 5px 15px; border-radius: 20px;
-    border: 1px solid var(--primary); font-size: 0.8rem;
-}
-
-.text-gradient {
-    background: linear-gradient(90deg, #818cf8, #c084fc);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-
-.btn-primary {
-    background: var(--primary); color: white;
-    padding: 12px 28px; border-radius: 12px;
-    text-decoration: none; font-weight: 600; display: inline-block;
-    transition: var(--transition);
-}
-
-.btn-secondary {
-    border: 1px solid var(--glass-border); color: white;
-    padding: 12px 28px; border-radius: 12px;
-    text-decoration: none; font-weight: 600; display: inline-block;
-    transition: var(--transition); margin-left: 10px;
-}
-
-.btn-primary:hover, .btn-secondary:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-}
-
-/* 5. PROJETOS E CONTACTOS */
-.container { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
-
-.grid, .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; margin-top: 40px;
-}
-
-.card, .contact-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    border-radius: 24px; padding: 30px;
-    text-decoration: none; color: white;
-    transition: var(--transition);
-}
-
-.card:hover, .contact-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.tags { display: flex; gap: 10px; margin-top: 15px; }
-.tags span { 
-    font-size: 0.7rem; background: rgba(99, 102, 241, 0.2); 
-    padding: 4px 10px; border-radius: 50px; color: #a5b4fc; 
-}
-
-.contact-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
-
-/* 6. WHATSAPP FLOAT */
-.whatsapp-float {
-    position: fixed; bottom: 30px; right: 30px;
-    width: 60px; height: 60px; background: #25d366;
-    border-radius: 50%; display: flex; justify-content: center; align-items: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3); z-index: 2000;
-    transition: 0.3s;
-}
-
-.whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
-
-/* 7. RESPONSIVIDADE PC */
-@media (min-width: 768px) {
-    .hero-container { flex-direction: row; text-align: left; align-items: center; }
-    .profile-box { width: 320px; height: 320px; }
-}
-
-.footer { text-align: center; padding: 40px; color: var(--text-dim); font-size: 0.8rem; }
-:root {
-    --primary: #6366f1;
-    --bg-dark: #0f172a;
-    --text: #f8fafc;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-
-body { background: var(--bg-dark); color: var(--text); overflow-x: hidden; }
-
-/* FUNDO FUTURISTA */
-.futuristic-bg {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-}
 .sun {
     position: absolute; top: 15%; left: 50%; transform: translateX(-50%);
     width: 250px; height: 250px; background: linear-gradient(#ff0080, #ff8c00);
     border-radius: 50%; box-shadow: 0 0 50px rgba(255, 0, 128, 0.4);
 }
+
 .grid-floor {
     position: absolute; bottom: 0; width: 100%; height: 30%;
     background: linear-gradient(transparent, rgba(99, 102, 241, 0.1)),
@@ -273,41 +30,100 @@ body { background: var(--bg-dark); color: var(--text); overflow-x: hidden; }
                 repeating-linear-gradient(rgba(99, 102, 241, 0.1) 0 1px, transparent 1px 40px);
 }
 
-/* NAV */
-.glass-nav, .card {
+/* 3. NAVEGAÇÃO E CARDS GLASS */
+.glass-nav, .card, .contact-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { color: #94a3b8; text-decoration: none; }
 
-/* HERO - ALINHAMENTO DA FOTO */
-.hero { height: 100vh; display: flex; align-items: center; justify-content: center; }
-.hero-container { 
-    display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center; 
-}
-.profile-box { width: 180px; height: 180px; }
-.profile-img { 
-    width: 100%; height: 100%; object-fit: cover; 
-    border-radius: 30px; border: 2px solid var(--primary); 
-    
+.glass-nav {
+    position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+    width: 90%; max-width: 1100px; padding: 15px 30px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-radius: 100px; z-index: 1000;
 }
 
-/* BOTÕES E TEXTO */
-h1 { font-size: 2.5rem; margin: 10px 0; height: 10px,0; }
-.text-gradient { background: linear-gradient(90deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.btn-primary { background: var(--primary); color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; }
+/* 4. HERO SECTION - ALINHADA À ESQUERDA */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 5%; }
+/* Container que organiza tudo (Foto à esquerda, texto à direita) */
+.hero-container {
+  display: flex;
+  flex-direction: column; /* Em mobile, um abaixo do outro */
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Container da foto (Removido o absolute) */
+.profile-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* O Badge agora vive no fluxo normal (não absoluto) */
+.badge {
+  background: var(--primary);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 15px; /* Empurra a foto para baixo */
+  display: inline-block;
+}
+
+.profile-img {
+  width: 100%;
+  aspect-ratio: 1/1; /* Mantém quadrada */
+  object-fit: cover;
+  border-radius: 30px;
+  border: 3px solid var(--primary);
+}
+
+/* Alinhamento lado a lado em telas maiores */
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row; /* Lado a lado */
+    text-align: left;
+    justify-content: center;
+  }
+  .hero-content {
+    align-items: flex-start;
+  }
+}
+
+#center {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 25px; padding: 20px; max-width: 800px; margin: 0 auto; flex-grow: 1;
+}
+
+.profile-box { width: 250px; height: 250px; position: relative; }
+
+.profile-img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 30px; border: 2px solid var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+h1 { font-size: 2.5rem; margin: 10px 0; }
+.text-gradient { 
+    background: linear-gradient(90deg, #818cf8, #c084fc); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent; /* Necessário para ver o gradiente */
+}
+
+/* 5. BOTÕES */
+.btn-primary { background: var(--primary); color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; display: inline-block; }
 .btn-secondary { border: 1px solid white; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; margin-left: 10px; }
 
-
-
-/* PC ADJUST */
+/* 6. RESPONSIVIDADE */
 @media (min-width: 768px) {
     .hero-container { flex-direction: row; text-align: left; }
-    .profile-box { width: 250px; height: 250px; }
 }
-
-
 
 

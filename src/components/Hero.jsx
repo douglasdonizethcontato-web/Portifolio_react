@@ -3,8 +3,9 @@ import DouglasImg from '../assets/Douglas.jpg.jpg';
 
 export default function Hero() {
   return (
-    <section id="home" className="hero" style={{ position: 'relative', zIndex: 1 }}>
+    <section id="home" className="hero">
       <div className="hero-container">
+        
         <div className="profile-box">
           <span className="badge">Disponível para novos projetos</span>
           <img src={DouglasImg} alt="Douglas" className="profile-img" />
@@ -12,8 +13,8 @@ export default function Hero() {
         
         <div className="hero-content">
           <h1>
-            Desenvolvedor Frontend especializado em React, focado em criar interfaces modernas, rápidas e responsivas.
-            <span className="text-gradient"></span>git push origin main
+            Desenvolvedor Frontend especializado em React, 
+            <span className="text-gradient"> focado em criar interfaces modernas.</span>
           </h1>
           <p>Apaixonado por transformar requisitos de negócio em código limpo e eficiente.</p>
           
@@ -24,6 +25,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
+
       </div>
     </section>
   );
