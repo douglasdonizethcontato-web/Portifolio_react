@@ -16,7 +16,7 @@ export default function Hero() {
             Desenvolvedor Frontend especializado em React, 
             <span className="text-gradient"> focado em criar interfaces modernas.</span>
           </h1>
-          <p>React •JavaScript • Html • CSS • Git • GitHub • Responsive Design</p>
+          <p>React • JavaScript • Html • CSS • Git • GitHub • Responsive Design</p>
           
           <div className="hero-btns">
             <a href="#projects" className="btn-primary"></a>
