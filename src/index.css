@@ -1,129 +1,174 @@
 /* 1. VARIÁVEIS E DEFINIÇÕES GERAIS */
 :root {
     --primary: #6366f1;
-    --primary-hover: #4f46e5;
     --bg-dark: #0f172a;
-    --card-bg: rgba(255, 255, 255, 0.05);
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; }
+body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
 
-body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; min-height: 100vh; }
-
-/* 2. FUNDO FUTURISTA */
-.futuristic-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0a0a23; z-index: -1; }
-
-.sun {
-    position: absolute; top: 15%; left: 50%; transform: translateX(-50%);
-    width: 250px; height: 250px; background: linear-gradient(#ff0080, #ff8c00);
-    border-radius: 50%; box-shadow: 0 0 50px rgba(255, 0, 128, 0.4);
-}
-
-.grid-floor {
-    position: absolute; bottom: 0; width: 100%; height: 30%;
-    background: linear-gradient(transparent, rgba(99, 102, 241, 0.1)),
-                repeating-linear-gradient(90deg, rgba(99, 102, 241, 0.1) 0 1px, transparent 1px 40px),
-                repeating-linear-gradient(rgba(99, 102, 241, 0.1) 0 1px, transparent 1px 40px);
-}
-
-/* 3. NAVEGAÇÃO E CARDS GLASS */
-.glass-nav, .card, .contact-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
+/* 2. NAVEGAÇÃO GLASS */
 .glass-nav {
     position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
     width: 90%; max-width: 1100px; padding: 15px 30px;
-    display: flex; justify-content: space-between; align-items: center;
-    border-radius: 100px; z-index: 1000;
+    background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 100px;
+    display: flex; justify-content: space-between; align-items: center; z-index: 1000;
 }
 
-/* 4. HERO SECTION - ALINHADA À ESQUERDA */
-.hero { height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 5%; }
-/* Container que organiza tudo (Foto à esquerda, texto à direita) */
+.nav-links { display: flex; list-style: none; gap: 25px; padding: 0; }
+.nav-links a { text-decoration: none; color: var(--text-dim); transition: 0.3s; }
+.nav-links a:hover { color: white; }
+
+/* 3. HERO SECTION - ESTRUTURA SEM SOBREPOSIÇÃO */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 100px 5% 0; }
+
 .hero-container {
-  display: flex;
-  flex-direction: column; /* Em mobile, um abaixo do outro */
-  align-items: center;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 40px; max-width: 1000px; width: 100%;
 }
 
-/* Container da foto (Removido o absolute) */
-.profile-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 300px;
-}
-
-/* O Badge agora vive no fluxo normal (não absoluto) */
-.badge {
-  background: var(--primary);
-  color: white;
-  padding: 6px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  margin-bottom: 15px; /* Empurra a foto para baixo */
-  display: inline-block;
+/* Container da Foto */
+.profile-box { 
+    display: flex; flex-direction: column; align-items: center;
+    width: 100%; max-width: 250px; 
 }
 
 .profile-img {
-  width: 100%;
-  aspect-ratio: 1/1; /* Mantém quadrada */
-  object-fit: cover;
-  border-radius: 30px;
-  border: 3px solid var(--primary);
-}
-
-/* Alinhamento lado a lado em telas maiores */
-@media (min-width: 768px) {
-  .hero-container {
-    flex-direction: row; /* Lado a lado */
-    text-align: left;
-    justify-content: center;
-  }
-  .hero-content {
-    align-items: flex-start;
-  }
-}
-
-#center {
-    display: flex; flex-direction: column; align-items: flex-start;
-    gap: 25px; padding: 20px; max-width: 800px; margin: 0 auto; flex-grow: 1;
-}
-
-.profile-box { width: 250px; height: 250px; position: relative; }
-
-.profile-img {
-    width: 100%; height: 100%; object-fit: cover;
-    border-radius: 30px; border: 2px solid var(--primary);
+    width: 100%; aspect-ratio: 1/1; object-fit: cover;
+    border-radius: 30px; border: 3px solid var(--primary);
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-h1 { font-size: 2.5rem; margin: 10px 0; }
+.badge {
+    background: var(--primary); color: white;
+    padding: 6px 15px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 20px;
+}
+
+/* Conteúdo de Texto */
+.hero-content {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 20px;
+}
+
+h1 { font-size: 2.5rem; line-height: 1.2; }
 .text-gradient { 
     background: linear-gradient(90deg, #818cf8, #c084fc); 
-    -webkit-background-clip: text; 
-    background-clip: text;
-    color: transparent; /* Necessário para ver o gradiente */
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; 
 }
 
-/* 5. BOTÕES */
-.btn-primary { background: var(--primary); color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; display: inline-block; }
-.btn-secondary { border: 1px solid white; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; margin-left: 10px; }
-
-/* 6. RESPONSIVIDADE */
+/* 4. RESPONSIVIDADE (LADO A LADO NO PC) */
 @media (min-width: 768px) {
-    .hero-container { flex-direction: row; text-align: left; }
+    .hero-container { flex-direction: row; text-align: left; justify-content: center; gap: 80px; }
+    .hero-content { align-items: flex-start; text-align: left; }
+}
+/* --- Seção de Projetos --- */
+#projects {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
 
+/* Grid Inteligente */
+.grid {
+    display: grid;
+    /* Colunas automáticas: mínimo 350px, máximo 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Card Minimalista */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 30px;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+.card p { color: var(--text-dim); margin-bottom: 20px; line-height: 1.5; }
+
+/* Tags de tecnologia */
+.tags { display: flex; gap: 10px; margin-bottom: 20px; }
+.tags span {
+    font-size: 0.75rem;
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+/* Botões de Filtro */
+.filter-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--text-main);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Card já definido anteriormente, mas garanta que ele tem altura fixa se quiser grid alinhado */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 25px;
+    transition: var(--transition);
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25d366; /* Cor oficial do WhatsApp */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 2000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}

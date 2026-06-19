@@ -38,6 +38,27 @@
   display: inline-block;
 }
 
+/* Remove os pontos e alinha horizontalmente */
+.nav-links {
+  display: flex;
+  list-style: none; /* Remove as bolinhas da lista */
+  padding: 0;       /* Remove o recuo padrão do navegador */
+  margin: 0;
+  gap: 25px;        /* Espaçamento entre os itens */
+}
+
+/* Garante que os links dentro dos itens da lista fiquem bonitos */
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-dim);
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.nav-links li a:hover {
+  color: white;
+}
+
 /* --- Hero Container: O pai que organiza tudo --- */
 .hero-container {
   display: flex;

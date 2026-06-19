@@ -19,9 +19,8 @@ export default function Hero() {
           <p>Apaixonado por transformar requisitos de negócio em código limpo e eficiente.</p>
           
           <div className="hero-btns">
-            <a href="#projects" className="btn-primary">Ver Trabalho</a>
+            <a href="#projects" className="btn-primary"></a>
             <a href="https://wa.me/351935063009" className="btn-secondary" target="_blank" rel="noreferrer">
-              WhatsApp
             </a>
           </div>
         </div>
