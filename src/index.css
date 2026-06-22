@@ -60,6 +60,7 @@ h1 { font-size: 2.5rem; line-height: 1.2; }
     -webkit-background-clip: text; background-clip: text;
     color: transparent; 
 }
+   
 
 /* 4. RESPONSIVIDADE (LADO A LADO NO PC) */
 @media (min-width: 768px) {
