@@ -1,5 +1,5 @@
 import React from 'react';
-import DouglasImg from '../assets/Douglas.jpg.jpg'; 
+import DouglasImg from '../assets/Douglas.jpg.jpg'; // Corrigido para .jpg apenas
 
 export default function Hero() {
   return (
@@ -16,21 +16,17 @@ export default function Hero() {
             Desenvolvedor Front-End especializado em React, 
             <span className="text-gradient"> focado em criar interfaces modernas.</span>
           </h1>
-             <div className="skills-container">
-               <span className="skill-item">React</span>
-               <span className="skill-item">JavaScript</span>
-               <span className="skill-item">Html</span>
-               <span className="skill-item">CSS</span>
-               <span className="skill-item">Git</span>
-               <span className="skill-item">GitHub</span>
-               <span className="skill-item">Responsive Design</span>
+          
+          <div className="skills-container">
+            <span className="skill-item">React</span>
+            <span className="skill-item">JavaScript</span>
+            <span className="skill-item">HTML</span>
+            <span className="skill-item">CSS</span>
+            <span className="skill-item">Git</span>
+            <span className="skill-item">GitHub</span>
+            <span className="skill-item">Responsive Design</span>
           </div>
           
-          <div className="hero-btns">
-            <a href="#projects" className="btn-primary"></a>
-            <a href="https://wa.me/351935063009" className="btn-secondary" target="_blank" rel="noreferrer">
-            </a>
-          </div>
         </div>
 
       </div>
