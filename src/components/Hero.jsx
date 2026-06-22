@@ -13,10 +13,18 @@ export default function Hero() {
         
         <div className="hero-content">
           <h1>
-            Desenvolvedor Frontend especializado em React, 
+            Desenvolvedor Front-End especializado em React, 
             <span className="text-gradient"> focado em criar interfaces modernas.</span>
           </h1>
-          <p>React • JavaScript • Html • CSS • Git • GitHub • Responsive Design</p>
+             <div className="skills-container">
+               <span className="skill-item">React</span>
+               <span className="skill-item">JavaScript</span>
+               <span className="skill-item">Html</span>
+               <span className="skill-item">CSS</span>
+               <span className="skill-item">Git</span>
+               <span className="skill-item">GitHub</span>
+               <span className="skill-item">Responsive Design</span>
+          </div>
           
           <div className="hero-btns">
             <a href="#projects" className="btn-primary"></a>

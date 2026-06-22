@@ -37,9 +37,9 @@ body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1
 }
 
 .profile-img {
-    width: 100%; aspect-ratio: 1/1; object-fit: cover;
-    border-radius: 30px; border: 3px solid var(--primary);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    width: 80%; aspect-ratio: 1/1; object-fit: cover;
+    border-radius: 1500px; border: 2px solid var(--primary);
+    box-shadow: 2 40px 40px rgba(0,0,0,0.5);
 }
 
 .badge {
@@ -171,4 +171,28 @@ h1 { font-size: 2.5rem; line-height: 1.2; }
 
 .whatsapp-float:hover {
     transform: scale(1.1);
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.skill-item {
+  padding: 8px 16px;
+  background-color: #180101;
+  border-radius: 20px;
+  transition: all 0.3s ease; /* Define a duração e suavidade da animação */
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+/* O estado do hover (quando passa o rato) */
+.skill-item:hover {
+  transform: translateY(-8px); /* Move o item para cima */
+  background-color: #e10611;    /* Muda a cor de fundo */
+  color: #e6d8da;                  /* Muda a cor do texto */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Adiciona uma sombra suave */
 }
